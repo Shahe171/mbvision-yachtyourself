@@ -1,0 +1,261 @@
+/* General Styling */
+:root {
+    --primary-bg: #1a1a2e; /* Dark background */
+    --text-color: #f0f0f0; /* Light text */
+    --accent-color: #5d259c; /* Purple/Blue for buttons, accents */
+    --button-hover-color: #8c5dce; /* Lighter purple on hover */
+    --card-bg: rgba(26, 26, 46, 0.7); /* Slightly transparent dark for cards */
+    --section-padding: 80px 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Fallback font */
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-bg-pattern {
+    background-image: url('star-pattern.jpg'); /* Replace with your actual star pattern image */
+    background-size: cover; /* Adjust as needed, 'repeat' for tile effect */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Header */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent header */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust logo size */
+    filter: brightness(0) invert(1); /* Makes logo white if it's black */
+}
+
+/* If logo is text: */
+/*
+.logo h1 {
+    font-size: 2em;
+    color: var(--text-color);
+    margin: 0;
+}
+.logo-accent {
+    color: var(--accent-color);
+}
+*/
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: var(--section-padding);
+    padding-top: 100px; /* Extra padding for header */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+/* About Section */
+.about-section {
+    padding: var(--section-padding);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between image and text */
+}
+
+.about-image {
+    flex: 1; /* Takes equal space */
+    min-width: 400px; /* Minimum width for image container */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Slight rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+    flex: 1; /* Takes equal space */
+}
+
+.about-text h3 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.about-text p {
+    font-size: 1.05em;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+/* Blog Section */
+.blog-section {
+    padding: var(--section-padding);
+    text-align: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    text-align: left; /* Align text left within card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.blog-card h4 {
+    color: var(--accent-color);
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.blog-card h5 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.blog-card p {
+    font-size: 0.95em;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .main-nav ul li {
+        margin: 5px 15px;
+    }
+    .about-content {
+        flex-direction: column;
+    }
+    .about-image, .about-text {
+        min-width: unset; /* Reset min-width for smaller screens */
+    }
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2em;
+    }
+    .hero-content p, .about-text p, .blog-card p {
+        font-size: 0.9em;
+    }
+    .main-nav ul li {
+        margin: 5px 10px;
+    }
+    .blog-grid {
+        grid-template-columns: 1fr; /* Stack blog cards on small screens */
+    }
+    .section-bg-pattern {
+        background-size: auto; /* Allow pattern to repeat on small screens if desired */
+    }
+}
